@@ -17,7 +17,7 @@ const viewState = {
   q: null,
 };
 
-const LAST_VERSION = "2026-09-25";
+const LAST_VERSION = "2026-09-28";
 
 const BOTTOM_TEXT = `This page is maintained by Hugo Beeloo-Sauerbier Couvée (hugo.sauerbier-couvee [at] tum.de). Last update: ${LAST_VERSION}.`;
 
@@ -36,7 +36,7 @@ const CONTACT_TEXT = `For questions or feedback, contact: hugo.sauerbier-couvee 
 
 
 const PAGE_IDS = ["home", "references", "cite", "contact"];
-const MOBILE_MEDIA_QUERY = "(max-width: 720px)";
+//const MOBILE_MEDIA_QUERY = "(max-width: 720px)";
 
 // Adapt normalized columns to the currently selected display order.
 function columnsForMode(columns, orderMode) {
@@ -310,7 +310,7 @@ function renderResult(columns, d, q, bounds) {
 
   rerenderDiagramSection();
   document.getElementById("results").hidden = false;
-  syncHomeResultsScrollMode();
+  //syncHomeResultsScrollMode();
 }
 
 // Show or clear the current validation error message.
@@ -319,11 +319,11 @@ function setError(message) {
   if (message) {
     document.getElementById("results").hidden = true;
   }
-  syncHomeResultsScrollMode();
+  //syncHomeResultsScrollMode();
 }
 
 // Keep page scrolling locked when only the results pane should scroll.
-function syncHomeResultsScrollMode() {
+/* function syncHomeResultsScrollMode() {
   const main = document.querySelector(".app-layout > main.container");
   const home = document.getElementById("home");
   const results = document.getElementById("results");
@@ -335,7 +335,7 @@ function syncHomeResultsScrollMode() {
   const lockMainScroll = !isMobile && homeVisible && resultsVisible;
 
   main.classList.toggle("home-results-scroll-lock", lockMainScroll);
-}
+} */
 
 // Display one of the static pages and sync menu button styles.
 function showPage(pageId) {
@@ -353,7 +353,7 @@ function showPage(pageId) {
     }
   }
 
-  syncHomeResultsScrollMode();
+  //syncHomeResultsScrollMode();
 }
 
 // Resolve a valid page id from location hash.
@@ -423,12 +423,12 @@ function main() {
     showPage(pageIdFromHash());
   });
 
-  const mobileBreakpoint = window.matchMedia(MOBILE_MEDIA_QUERY);
+  /* const mobileBreakpoint = window.matchMedia(MOBILE_MEDIA_QUERY);
   if (mobileBreakpoint.addEventListener) {
     mobileBreakpoint.addEventListener("change", syncHomeResultsScrollMode);
   } else if (mobileBreakpoint.addListener) {
     mobileBreakpoint.addListener(syncHomeResultsScrollMode);
-  }
+  } */
 
   const menuToggle = document.getElementById("menu-toggle");
   if (menuToggle) {
@@ -465,7 +465,7 @@ function main() {
     renderResult(result.columns, result.d, result.q, result.bounds);
   });
 
-  syncHomeResultsScrollMode();
+  //syncHomeResultsScrollMode();
 }
 
 // Start the UI only when running in a browser environment.

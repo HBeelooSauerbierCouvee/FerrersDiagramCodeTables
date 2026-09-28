@@ -10,7 +10,7 @@
         display: grid;
         grid-template-columns: 210px minmax(0, 1fr);
         height: 100vh;
-        height: 100dvh;
+        height: 100dvh;      
         overflow: hidden;
         transition: grid-template-columns 250ms ease;
       }
@@ -25,13 +25,14 @@
         top: 0;
         align-self: start;
         height: 100vh;
+        height: 100dvh;
         overflow: hidden;
         transition: padding 250ms ease;
       }
 
       .app-layout > main {
         min-height: 0;
-        overflow-y: auto;
+        overflow-y: auto; /* auto */
       }
 
       .side-menu nav {
@@ -124,12 +125,12 @@
         .app-layout {
           display: block;
           height: auto;
-          overflow: visible;
+          overflow: visible; /* visible;  */ 
           transition: none;
         }
 
         .app-layout > main {
-          overflow-y: visible;
+          overflow-y:  visible; /* visible;  */ 
         }
 
         .side-menu {
