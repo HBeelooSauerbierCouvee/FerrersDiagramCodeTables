@@ -7,7 +7,6 @@ body {
   margin: 0;
   background: #f8fafc;
   color: #0f172a;
-  overflow-y: hidden;
 }
 
 .container {
@@ -155,10 +154,6 @@ button:hover {
 }
 
 @media (max-width: 720px) {
-  body {
-    overflow-y: auto;
-  }
-
   .row,
   .diagram-and-bounds {
     grid-template-columns: 1fr;
