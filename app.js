@@ -17,7 +17,7 @@ const viewState = {
   q: null,
 };
 
-const LAST_VERSION = "2026-09-28";
+const LAST_VERSION = "2026-09-29";
 
 const BOTTOM_TEXT = `This page is maintained by Hugo Beeloo-Sauerbier Couvée (hugo.sauerbier-couvee [at] tum.de). Last update: ${LAST_VERSION}.`;
 

@@ -24,7 +24,7 @@ export function isPrimePower(q) {
 // Compute characteristic p of a prime power q.
 export function characteristicOfPrimePower(q) {
   if (!Number.isInteger(q) || q < 2) return null;
-  for (let p = 2; p * p <= q; p += 1) {
+  for (let p = 2; p <= q; p += 1) {
     if (q % p !== 0) continue;
     let n = q;
     while (n % p === 0) n /= p;

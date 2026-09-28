@@ -3,16 +3,16 @@ import { nuMDS } from "./shared.js";
 // Detect when the diagonal construction meets the best upper bound.
 export function isMdsConstructibleFamily(context) {
   return (
-    context.nuMin === nuMDS(context)
+    context.q >= context.order - 1
   );
 }
 
 // Build the attained lower bound for MDS-constructible diagrams.
 export function evaluateMdsConstructibleLowerBound(context) {
   return {
-    id: "neri_2024_mds_constructible",
+    id: "etzion_2016_mds_constructible",
     value: nuMDS(context),
-    ref: "neri_stanojkovski_2024",
+    ref: "etzion_et_al_2016",
     construction: {
       attained: true,
       label: "MDS-constructible diagonal construction",
@@ -27,20 +27,20 @@ export function describeMdsConstructibleApplicability(context, evaluation) {
 
   if (!evaluation) {
     return [
-      `Not applicable because ν_min(D,d) = ${context.nuMin} does not match the MDS-constructible bound ${nuMDS(context)}.`,
+      `Not applicable because q < ${context.order - 1} (= order - 1).`,
     ];
   }
 
   return [
-    `Applicable because ν_min(D,d) = ${context.nuMin} matches the MDS-constructible bound ${nuMDS(context)}.`,
+    `Applicable because q >= ${context.order - 1} (= order - 1).`,
   ];
 }
 
 // Register the MDS-constructible lower-bound rule.
 const mdsConstructibleLowerBound = {
-  id: "neri_2024_mds_constructible",
-  label: "MDS-constructible construction",
-  referenceId: "neri_stanojkovski_2024",
+  id: "etzion_2016_mds_constructible",
+  label: "MDS-diagonal construction",
+  referenceId: "etzion_et_al_2016",
   appliesTo: isMdsConstructibleFamily,
   describeApplicability: describeMdsConstructibleApplicability,
   evaluate: evaluateMdsConstructibleLowerBound,
