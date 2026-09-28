@@ -423,9 +423,12 @@ function main() {
     showPage(pageIdFromHash());
   });
 
-  window.addEventListener("resize", () => {
-    syncHomeResultsScrollMode();
-  });
+  const mobileBreakpoint = window.matchMedia(MOBILE_MEDIA_QUERY);
+  if (mobileBreakpoint.addEventListener) {
+    mobileBreakpoint.addEventListener("change", syncHomeResultsScrollMode);
+  } else if (mobileBreakpoint.addListener) {
+    mobileBreakpoint.addListener(syncHomeResultsScrollMode);
+  }
 
   const menuToggle = document.getElementById("menu-toggle");
   if (menuToggle) {
