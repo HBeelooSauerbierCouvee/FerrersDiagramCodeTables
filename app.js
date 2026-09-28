@@ -310,7 +310,6 @@ function renderResult(columns, d, q, bounds) {
 
   rerenderDiagramSection();
   document.getElementById("results").hidden = false;
-  //syncHomeResultsScrollMode();
 }
 
 // Show or clear the current validation error message.
@@ -319,23 +318,9 @@ function setError(message) {
   if (message) {
     document.getElementById("results").hidden = true;
   }
-  //syncHomeResultsScrollMode();
 }
 
-// Keep page scrolling locked when only the results pane should scroll.
-/* function syncHomeResultsScrollMode() {
-  const main = document.querySelector(".app-layout > main.container");
-  const home = document.getElementById("home");
-  const results = document.getElementById("results");
-  if (!main || !home || !results) return;
 
-  const isMobile = window.matchMedia(MOBILE_MEDIA_QUERY).matches;
-  const homeVisible = !home.hidden;
-  const resultsVisible = !results.hidden;
-  const lockMainScroll = !isMobile && homeVisible && resultsVisible;
-
-  main.classList.toggle("home-results-scroll-lock", lockMainScroll);
-} */
 
 // Display one of the static pages and sync menu button styles.
 function showPage(pageId) {
@@ -353,7 +338,6 @@ function showPage(pageId) {
     }
   }
 
-  //syncHomeResultsScrollMode();
 }
 
 // Resolve a valid page id from location hash.
@@ -465,7 +449,6 @@ function main() {
     renderResult(result.columns, result.d, result.q, result.bounds);
   });
 
-  //syncHomeResultsScrollMode();
 }
 
 // Start the UI only when running in a browser environment.
