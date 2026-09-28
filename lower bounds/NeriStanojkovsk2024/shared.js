@@ -88,6 +88,10 @@ export function pContraction(columns, p) {
     out[i - 1] = columns[ph * i - 1] / ph;
   }
   const N = diagramOrder(out);
+
+  if (isPowerOfPrime(diagramOrder(columns),p)) {
+    return out;
+  }
   return Array(N - out.length + 1)
       .fill(0)
       .concat(out); 
