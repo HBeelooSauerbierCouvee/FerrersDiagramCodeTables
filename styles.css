@@ -80,12 +80,15 @@ button:hover {
 .container.home-results-scroll-lock #home {
   display: flex;
   flex-direction: column;
+  flex: 1;
   min-height: 0;
-  height: 100%;
 }
 
 .app-layout > main.container.home-results-scroll-lock {
+  display: flex;
+  flex-direction: column;
   height: 100%;
+  min-height: 0;
   overflow-y: hidden;
 }
 
