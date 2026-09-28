@@ -86,6 +86,7 @@ button:hover {
 
 .app-layout > main.container.home-results-scroll-lock {
   height: 100vh;
+  height: 100dvh;
   overflow-y: hidden;
 }
 
