@@ -77,6 +77,23 @@ button:hover {
   padding: 1rem;
 }
 
+.container.home-results-scroll-lock #home {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  height: 100%;
+}
+
+.app-layout > main.container.home-results-scroll-lock {
+  overflow-y: hidden;
+}
+
+.container.home-results-scroll-lock #results {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+}
+
 .diagram-and-bounds {
   display: grid;
   grid-template-columns: 1fr;
